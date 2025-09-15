@@ -1,109 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shrey Parikh for Co-Captain | Comps Dept</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh; color: white; overflow-x: hidden;
-    }
-    .container { max-width: 420px; margin: 0 auto; padding: 20px; }
-    .header {
-      text-align: center; padding: 30px 20px;
-      background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px);
-      border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); margin-bottom: 20px;
-      animation: slideDown 0.8s ease-out;
-    }
-    @keyframes slideDown { from {opacity:0;transform:translateY(-30px);} to {opacity:1;transform:translateY(0);} }
-    .profile-section { display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
-    .profile-img {
-      width:80px;height:80px; border-radius:50%;
-      overflow:hidden; margin-right:20px; animation:bounce 2s infinite;
-    }
-    .profile-img img { width:100%; height:100%; object-fit:cover; }
-    @keyframes bounce {
-      0%,20%,50%,80%,100%{transform:translateY(0);}
-      40%{transform:translateY(-10px);} 60%{transform:translateY(-5px);}
-    }
-    .name-section h1 {
-      font-size:28px;margin-bottom:5px;
-      background:linear-gradient(45deg,#fff,#ffd93d);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
-    .subtitle {font-size:16px;opacity:.9;margin-bottom:15px;}
-    .vision-card {
-      background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);
-      padding:25px;border-radius:20px;margin:20px 0;
-      border-left:5px solid #ff6b6b;animation:fadeIn 1s ease-out .7s both;
-    }
-    .vision-card h3 {color:#ffd93d;font-size:20px;margin-bottom:15px;text-align:center;}
-    .goals-list {list-style:none;margin:15px 0;}
-    .goals-list li {padding:8px 0;position:relative;padding-left:30px;}
-    .goals-list li:before {content:"⚡";position:absolute;left:0;color:#ffd93d;}
-    .vote-section { text-align:center;padding:30px 20px;background:rgba(0,0,0,0.2); border-radius:20px;margin-top:20px; }
-    .vote-btn {
-      background:linear-gradient(45deg,#ff6b6b,#ffd93d);color:white;border:none;
-      padding:18px 35px;border-radius:30px;font-size:18px;font-weight:bold;
-      cursor:pointer;transition:all .3s ease;box-shadow:0 4px 15px rgba(0,0,0,0.2);
-      text-transform:uppercase;letter-spacing:1px;
-    }
-    .vote-btn:hover {transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.3);}
-    .footer {text-align:center;margin-top:25px;font-size:12px;opacity:.8;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrey Parikh for Co-Captain | Comps Dept</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            animation: bounce 2s infinite;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-img .placeholder {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .name-section h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            background: linear-gradient(45deg, #fff, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .code-snippet {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            border-left: 4px solid #ffd93d;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .sport-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .sport-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .sport-card .emoji {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .vision-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #ff6b6b;
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+        
+        .vision-card h3 {
+            color: #ffd93d;
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .goals-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .goals-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .goals-list li:before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #ffd93d;
+        }
+        
+        .experience-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            padding: 12px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px 5px;
+            font-size: 14px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 107, 107, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+        }
+        
+        .vote-section {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        
+        .vote-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .vote-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .floating-emoji {
+            position: fixed;
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 15px 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd93d;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header Section -->
-    <div class="header">
-      <div class="profile-section">
-        <!-- Replace this src with your actual photo URL -->
-        <div class="profile-img">
-          <img src="your-photo.jpg" alt="Shrey Parikh">
+    <!-- Floating Background Elements -->
+    <div class="floating-emoji" style="top: 10%; left: 10%; animation-delay: 0s;">🏏</div>
+    <div class="floating-emoji" style="top: 20%; right: 15%; animation-delay: 1s;">🏸</div>
+    <div class="floating-emoji" style="top: 60%; left: 5%; animation-delay: 2s;">🏊‍♂️</div>
+    <div class="floating-emoji" style="bottom: 20%; right: 10%; animation-delay: 3s;">💪</div>
+    
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile-section">
+                <div class="profile-img" id="profileImage">
+                    <div class="placeholder">Loading Photo...</div>
+                </div>
+                <div class="name-section">
+                    <h1>SHREY PARIKH</h1>
+                    <p class="subtitle">for Co-Captain | Comps Dept</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 15px 0;">
+                <span class="experience-badge" style="display: inline-block;">🏅 Sports Director @ RCPG</span>
+            </div>
         </div>
-        <div class="name-section">
-          <h1>Shrey Parikh</h1>
-          <div class="subtitle">Standing for Co-Captain – Comps Dept</div>
+
+        <!-- Sports Background -->
+        <div class="vision-card">
+            <h3>🏅 My Sports Journey</h3>
+            <div class="sports-grid">
+                <div class="sport-card">
+                    <div class="emoji">🏏</div>
+                    <div>Cricket</div>
+                </div>
+                <div class="sport-card">
+                    <div class="emoji">🏸</div>
+                    <div>Throwball</div>
+                </div>
+                <div class="sport-card">
+                    <div class="emoji">🤼</div>
+                    <div>Kabaddi</div>
+                </div>
+                <div class="sport-card">
+                    <div class="emoji">🏊‍♂️</div>
+                    <div>Swimming</div>
+                </div>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-number">4+</span>
+                    <div class="stat-label">Sports Played</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">Team Spirit</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">1</span>
+                    <div class="stat-label">Goal: Unite Comps</div>
+                </div>
+            </div>
+            
+            <div class="experience-badge">🎯 Current: Sports Director @ RCPG</div>
         </div>
-      </div>
+
+        <!-- Vision Section -->
+        <div class="vision-card">
+            <h3>🚀 My Vision for Comps</h3>
+            <ul class="goals-list">
+                <li><strong>Full Participation:</strong> Ensuring everyone gets equal opportunities</li>
+                <li><strong>Fair Selections:</strong> Transparent and merit-based selection processes</li>
+                <li><strong>Create Memories:</strong> Fun events that go beyond just academics</li>
+                <li><strong>Support System:</strong> Peer mentoring and collaboration</li>
+                <li><strong>Department Pride:</strong> Make Comps the most connected department</li>
+            </ul>
+        </div>
+
+        <!-- Why Me Section -->
+        <div class="vision-card">
+            <h3>💡 Why Choose Me?</h3>
+            <p style="line-height: 1.6; margin-bottom: 15px;">
+                Sports taught me that <strong>every team member matters</strong>. As your Co-Captain, I'll bring:
+            </p>
+            <ul class="goals-list">
+                <li>Proven leadership experience from RCPG</li>
+                <li>Understanding of teamwork & collaboration</li>
+                <li>Fresh energy and innovative ideas</li>
+                <li>Commitment to fair play and inclusion</li>
+            </ul>
+        </div>
+
+        <!-- Vote Section -->
+        <div class="vote-section">
+            <h3 style="margin-bottom: 20px;">Ready to Level Up Comps? 🎮</h3>
+            <button class="vote-btn" onclick="showVoteMessage()">
+                VOTE SHREY PARIKH
+            </button>
+            <p style="margin-top: 15px; font-size: 14px;">
+                Your vote = Our success! 🗳️
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Built with 💻 & 💪 by your future Co-Captain</p>
+            <p style="margin-top: 5px;">"Teamwork makes the dream work!"</p>
+        </div>
     </div>
 
-    <!-- Vision Section -->
-    <div class="vision-card">
-      <h3>✨ My Vision for Comps ✨</h3>
-      <ul class="goals-list">
-        <li>Full participation – We’ll be present and strong in every single event.</li>
-        <li>Fair selections – Equal chances for everyone, no bias!</li>
-        <li>Better communication – You’ll always know what’s happening via group chats and announcements!</li>
-        <li>Memories – We’ll make moments that last a lifetime.</li>
-        <li>Department Pride – Let’s make Comps the loudest, proudest team!</li>
-      </ul>
-    </div>
+    <script>
+        // Load profile image
+        function loadProfileImage() {
+            const profileContainer = document.getElementById('profileImage');
+            const img = new Image();
+            
+            img.onload = function() {
+                profileContainer.innerHTML = `<img src="your-photo.jpg" alt="Shrey Parikh">`;
+            };
+            
+            img.onerror = function() {
+                // If image fails to load, show a styled placeholder
+                profileContainer.innerHTML = `
+                    <div class="placeholder">
+                        📸<br>
+                        <small>Photo will appear here</small>
+                    </div>
+                `;
+            };
+            
+            img.src = 'your-photo.jpg';
+        }
 
-    <!-- Why Choose Me Section -->
-    <div class="vision-card">
-      <h3>💡 Why Choose Me?</h3>
-      <ul class="goals-list">
-        <li>Approachable – Always here to listen to your ideas & problems.</li>
-        <li>Dedicated – I’ll give my 100% for our department.</li>
-        <li>Experienced – Actively participated & contributed in past events.</li>
-      </ul>
-    </div>
+        function showVoteMessage() {
+            const messages = [
+                "Thanks for the support! 🙌 Don't forget to vote on election day!",
+                "You're awesome! 🔥 Together we'll make Comps unstoppable!",
+                "That's the team spirit! ⚡ See you at the polls!"
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            alert(randomMessage);
+        }
 
-    <!-- Vote Section -->
-    <div class="vote-section">
-      <h3>🗳️ Your Vote, Your Voice</h3>
-      <p style="margin:15px 0;">Together, we can make our department stronger, more united, and unstoppable.</p>
-      <button class="vote-btn">Vote for Shrey ✨</button>
-    </div>
-
-    <div class="footer">
-      Made with ❤️ by Shrey Parikh | Comps Dept
-    </div>
-  </div>
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProfileImage();
+            
+            const emojis = ['🏏', '🏸', '💻', '⚡', '🎯'];
+            
+            setInterval(() => {
+                const emoji = document.createElement('div');
+                emoji.classList.add('floating-emoji');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * 100 + '%';
+                emoji.style.top = '100%';
+                emoji.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                
+                document.body.appendChild(emoji);
+                
+                setTimeout(() => {
+                    if (emoji.parentNode) {
+                        emoji.parentNode.removeChild(emoji);
+                    }
+                }, 7000);
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
